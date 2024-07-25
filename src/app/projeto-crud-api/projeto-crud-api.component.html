@@ -1,0 +1,34 @@
+<!-- FORMULARIO -->
+<form [formGroup]="formulario">
+    @if (inputId) {
+        <input type="number" formControlName="id" class="form-control" readonly>
+    } @else {
+    <input type="text"   formControlName="nome" class="form-control" placeholder="Nome">
+    <input type="number" formControlName="valor" class="form-control" placeholder="Valor">
+    }
+
+    <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar"  (click)="cadastrar()"> 
+    <input type="button" class="btn btn-primary" value="Alterar"   *ngIf="!btnCadastrar" (click)="alterar()"> 
+    <input type="button" class="btn btn-primary" value="Remover"   *ngIf="!btnCadastrar" (click)="remover()"> 
+</form>
+
+<!-- TABELA -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Selecionar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let v of vetor; let i = index"> 
+            <td>{{i+1}}</td>
+            <td>{{v.nome}}</td>
+            <td>{{v.valor}}</td>
+            <td><button class="btn btn-primary" (click)="selecionarEspecifico(i)">Selecionar</button></td>
+        </tr>
+    </tbody>
+</table>
