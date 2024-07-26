@@ -19,8 +19,8 @@ permitindo o cadastro, atualização, seleção e remoção de usuários atravé
 
 ## Instalar o Node Modules
 Ao executar `ng serve` os seguinte erro irá ocorrer: 
--Node packages may not be installed. Try installing with 'npm install'.
--Error: Could not find the '@angular-devkit/build-angular:dev-server' builder's node package.
+- Node packages may not be installed. Try installing with 'npm install'.
+- Error: Could not find the '@angular-devkit/build-angular:dev-server' builder's node package.
 
 O erro ocorre porque o projeto está sem módulos do node. Para adicionar os módulos, é necessário o seguinte comando:
 `npm install`
